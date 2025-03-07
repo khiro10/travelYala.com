@@ -1,24 +1,15 @@
 import { Card, Col, Empty, Rate, Row } from 'antd'
 import React, { useEffect, useState } from 'react'
 import {  useNavigate } from 'react-router-dom';
-import ShowPlace from './showInfo';
-import { useFetch } from '../components/fecthData';
 import PixabayImage from '../components/Pixabay';
 
 export default function Destination() {
 
     const navigate = useNavigate();
 
-    type PlaceProps = {
-            name: string;
-            image: string;
-            attractions: string[];
-            adventure: string[];
-            best_time: string;
-        }
-    const [destinations, setDestinations] = useState<PlaceProps[]>()
+    // const [destinations, setDestinations] = useState<PlaceProps[]>()
       
-      const [open, setOpen] = React.useState<boolean>(false);
+      // const [open, setOpen] = React.useState<boolean>(false);
       const [loading, setLoading] = React.useState<boolean>(true);
       // const [selected, setSelected] = React.useState<PlaceProps>()
       const [Countries, setCountries] = useState([])

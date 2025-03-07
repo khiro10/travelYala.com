@@ -1,7 +1,7 @@
 import { Card, Col, Empty, Rate, Row } from 'antd';
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import PixabayImage from '../components/Pixabay';
-import { useSetState } from '@mantine/hooks';
+
 import { useNavigate } from 'react-router-dom';
 
 const Hotel = () => {
@@ -11,7 +11,7 @@ const Hotel = () => {
      useEffect(() => {
             const fetchHotels = async () => {
               try {
-                const response = await fetch("http://localhost:5000/api/countries", {
+                const response = await fetch("http://localhost:5000/api/hotels", {
                   mode: "cors",
                   headers: { "Access-Control-Allow-Origin": "*" },
                 });

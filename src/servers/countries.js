@@ -14,6 +14,14 @@ app.get("/api/countries", async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
+});app.get("/api/hotels", async (req, res) => {
+    try {
+        const { origin, destination, currency } = req.query;
+        const response = await axios.get(`https://api.travelpayouts.com/data/en/hotels.json`);
+        res.json(response.data);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
 });
 const key = "5ae2e3f221c38a28845f05b6f1871bf887b3a0f13b1539aa3e220ca7";
 

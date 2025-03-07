@@ -1,18 +1,23 @@
-import { Button, Card, Col, Empty, Layout, List, Rate, Row, Typography } from 'antd';
+import { Button, Card, Col, Empty, Layout, Rate, Row, Typography } from 'antd';
 import { Content } from 'antd/es/layout/layout';
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { useFetch } from '../components/fecthData';
 import { useNavigate, useParams } from 'react-router-dom';
 import { CloseOutlined } from "@ant-design/icons";
 import PixabayImage from '../components/Pixabay';
-import { useSetState } from '@mantine/hooks';
 
+interface GeonameResponse {
+  lat: number;
+  lon: number;
+  name: string;
+  country: string;
+}
 const Place: React.FC = () => {
-    
+const [geo, setGeo] = useState<GeonameResponse>()    
 const navigate = useNavigate();
 const { id } = useParams<{ id: string }>();    
 const {data : geoData}  = useFetch(`http://localhost:5000/api/country/${id}`);
-
+setGeo(geoData as any)
 // const t1 = "interesting_places";
 // const t2 = "architecture";
 // const t3 = "museums";
@@ -24,7 +29,7 @@ const {data : geoData}  = useFetch(`http://localhost:5000/api/country/${id}`);
 // const [historical_places, sethistorical_places] = useState([])
 console.log(geoData);
 
-const {data}  = useFetch(`http://localhost:5000/api/countryplaces/${geoData?.lat}/${geoData?.lon}`);
+const {data}  = useFetch(`http://localhost:5000/api/countryplaces/${geo?.lat}/${geo?.lon}`);
 // useEffect(() => {
 //   if(data){
 //     setInteresting_places((data as any).features?.filter((place: any) => place.properties?.kinds?.includes(t1)))
