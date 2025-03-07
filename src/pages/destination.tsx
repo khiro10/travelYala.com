@@ -2,6 +2,8 @@ import { Card, Col, Empty, Rate, Row } from 'antd'
 import React, { useEffect, useState } from 'react'
 import {  useNavigate } from 'react-router-dom';
 import PixabayImage from '../components/Pixabay';
+import { NextApiRequest, NextApiResponse } from 'next';
+import axios from 'axios';
 
 export default function Destination() {
 
@@ -18,21 +20,32 @@ export default function Destination() {
       useEffect(() => {
         const fetchCountries = async () => {
           try {
-            const response = await fetch("http://localhost:5000/api/countries", {
-              mode: "cors",
-              headers: { "Access-Control-Allow-Origin": "*" },
-            });
-            const data = await response.json();
-            setLoading(false);
-            setCountries(data); // ✅ Store fetched data in state
-            console.log(data[0]);
-            
+            const response = await axios.get('/api/countries');
+            console.log(response.data);
           } catch (error) {
-            console.error("Error fetching countries:", error);setLoading(false);
+            console.error('Error:', error);
           }
         };
-    
+      
         fetchCountries();
+        
+        // const fetchCountries = async () => {
+        //   try {
+        //     const response = await fetch("https://api.travelpayouts.com/data/en/countries.json", {
+        //       mode: "cors",
+        //       headers: { "Access-Control-Allow-Origin": "*" },
+        //     });
+        //     const data = await response.json();
+        //     setLoading(false);
+        //     setCountries(data); // ✅ Store fetched data in state
+        //     console.log(data[0]);
+            
+        //   } catch (error) {
+        //     console.error("Error fetching countries:", error);setLoading(false);
+        //   }
+        // };
+    
+        // fetchCountries();
       }, []);
       // const showLoading = () => {
       //   setOpen(true);
