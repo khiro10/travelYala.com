@@ -1,0 +1,15 @@
+.item {
+    font-size: bold;
+    color: white;
+  }
+  .ant-menu-item-selected {
+    color: rgb(19, 51, 181) !important; /* Change text color */
+    font-weight: bolder;
+  }
+  .search{
+  position: relative;
+  left: 20%;
+  }
+  .searchBtn button {
+    background-color: rgb(19, 51, 181)ua;
+  }
