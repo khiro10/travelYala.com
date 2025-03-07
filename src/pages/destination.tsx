@@ -2,7 +2,6 @@ import { Card, Col, Empty, Rate, Row } from 'antd'
 import React, { useEffect, useState } from 'react'
 import {  useNavigate } from 'react-router-dom';
 import PixabayImage from '../components/Pixabay';
-import { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 
 export default function Destination() {
@@ -21,9 +20,12 @@ export default function Destination() {
         const fetchCountries = async () => {
           try {
             const response = await axios.get('/api/countries');
+            setCountries(response.data)
             console.log(response.data);
+            setLoading(false)
           } catch (error) {
             console.error('Error:', error);
+            setLoading(false)
           }
         };
       
