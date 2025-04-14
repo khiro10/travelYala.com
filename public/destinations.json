@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Paris, France",
+    "image": "../data/imgs/paris.jpg",
+    "attractions": ["Eiffel Tower", "Louvre Museum", "Notre Dame", "Champs-Élysées"],
+    "best_time_to_visit": ["April - June", "September - November"],
+    "activities": ["Sightseeing", "River cruises", "Art & fashion tours"],
+    "adventure": ["Hot air ballooning in Loire Valley", "Biking along the Seine River"],
+    "cuisine": ["Croissants", "Macarons", "Escargot", "Wine"]
+  },
+  {
+    "name": "Rome, Italy",
+    "image": "../data/imgs/rome.jpg",
+    "attractions": ["Colosseum", "Vatican City", "Pantheon", "Trevi Fountain"],
+    "best_time_to_visit": ["April - June", "September - October"],
+    "activities": ["Historical tours", "Fine dining", "City walks"],
+    "adventure": ["Vespa scooter tours", "Underground catacomb exploration"],
+    "cuisine": ["Pasta Carbonara", "Pizza", "Gelato", "Espresso"]
+  },
+  {
+    "name": "Bali, Indonesia",
+    "image": "../data/imgs/bali.jpg",
+    "attractions": ["Uluwatu Temple", "Ubud Rice Terraces", "Seminyak Beach"],
+    "best_time_to_visit": ["April - October"],
+    "activities": ["Surfing", "Yoga retreats", "Island hopping"],
+    "adventure": ["Scuba diving in Nusa Penida", "White water rafting in Ayung River"],
+    "cuisine": ["Nasi Goreng", "Satay", "Babi Guling"]
+  },
+  {
+    "name": "New York City, USA",
+    "image": "../data/imgs/newyork.jpg",
+    "attractions": ["Times Square", "Central Park", "Statue of Liberty", "Broadway"],
+    "best_time_to_visit": ["April - June", "September - November"],
+    "activities": ["Shopping", "Sightseeing", "Live shows", "Museums"],
+    "adventure": ["Helicopter tours", "Rock climbing in Central Park"],
+    "cuisine": ["Bagels", "Cheesecake", "Pizza", "Burgers"]
+  },
+  {
+    "name": "Dubai, UAE",
+    "image": "../data/imgs/dubai.jpg",
+    "attractions": ["Burj Khalifa", "Dubai Mall", "Palm Jumeirah", "Desert Safari"],
+    "best_time_to_visit": ["November - March"],
+    "activities": ["Luxury shopping", "Dune bashing", "Yacht tours"],
+    "adventure": ["Skydiving over Palm Jumeirah", "Dune buggy rides in the desert"],
+    "cuisine": ["Shawarma", "Falafel", "Dates", "Arabic Coffee"]
+  },
+  {
+    "name": "Tokyo, Japan",
+    "image": "../data/imgs/tokyo.jpg",
+    "attractions": ["Shibuya Crossing", "Mount Fuji", "Tokyo Tower", "Shinjuku Gyoen"],
+    "best_time_to_visit": ["March - May", "September - November"],
+    "activities": ["Cherry blossom viewing", "Anime tours", "Street food tasting"],
+    "adventure": ["Hiking Mount Fuji", "Go-karting through Tokyo streets"],
+    "cuisine": ["Sushi", "Ramen", "Tempura", "Matcha desserts"]
+  },
+  {
+    "name": "Sydney, Australia",
+    "image": "../data/imgs/sydney.jpg",
+    "attractions": ["Sydney Opera House", "Bondi Beach", "Harbour Bridge", "Taronga Zoo"],
+    "best_time_to_visit": ["September - November", "March - May"],
+    "activities": ["Beach surfing", "Whale watching", "Sydney Harbour cruises"],
+    "adventure": ["Shark diving in Manly", "Climbing Sydney Harbour Bridge"],
+    "cuisine": ["Meat pies", "Barramundi", "Lamingtons", "Flat White coffee"]
+  },
+  {
+    "name": "Cape Town, South Africa",
+    "image": "../data/imgs/capetown.jpg",
+    "attractions": ["Table Mountain", "Robben Island", "V&A Waterfront", "Cape Winelands"],
+    "best_time_to_visit": ["November - March"],
+    "activities": ["Wine tasting", "Historical tours", "Beach relaxation"],
+    "adventure": ["Shark cage diving", "Paragliding from Signal Hill"],
+    "cuisine": ["Bobotie", "Biltong", "Boerewors", "Malva pudding"]
+  },
+  {
+    "name": "Rio de Janeiro, Brazil",
+    "image": "../data/imgs/rio.jpg",
+    "attractions": ["Christ the Redeemer", "Sugarloaf Mountain", "Copacabana Beach"],
+    "best_time_to_visit": ["December - March"],
+    "activities": ["Samba dancing", "Carnival celebrations", "Beach volleyball"],
+    "adventure": ["Hang gliding over Rio", "Jungle trekking in Tijuca Forest"],
+    "cuisine": ["Feijoada", "Açaí bowls", "Pão de queijo", "Caipirinha"]
+  },
+  {
+    "name": "Santorini, Greece",
+    "image": "../data/imgs/santorini.jpg",
+    "attractions": ["Oia Village", "Red Beach", "Ancient Thera", "Ammoudi Bay"],
+    "best_time_to_visit": ["April - October"],
+    "activities": ["Sunset viewing", "Boat tours", "Wine tasting"],
+    "adventure": ["Volcano hiking", "Scuba diving in Caldera waters"],
+    "cuisine": ["Gyros", "Moussaka", "Baklava", "Greek Salad"]
+  },
+  {
+    "name": "Machu Picchu, Peru",
+    "image": "../data/imgs/peru.jpg",
+    "attractions": ["Machu Picchu", "Sacred Valley", "Cusco", "Salkantay Trek"],
+    "best_time_to_visit": ["May - September"],
+    "activities": ["Historical tours", "Cultural experiences", "Photography"],
+    "adventure": ["Hiking the Inca Trail", "Mountain biking in the Andes"],
+    "cuisine": ["Ceviche", "Lomo Saltado", "Causa", "Chicha Morada"]
+  },
+  {
+    "name": "Queenstown, New Zealand",
+    "image": "../data/imgs/Queenstown.jpg",
+    "attractions": ["Lake Wakatipu", "Milford Sound", "Skyline Gondola"],
+    "best_time_to_visit": ["December - March"],
+    "activities": ["Scenic boat cruises", "Wine tasting", "Skiing in winter"],
+    "adventure": ["Bungee jumping", "Jet boating in Shotover River"],
+    "cuisine": ["Hangi feast", "Pavlova", "Kiwi burger"]
+  },
+  {
+    "name": "Reykjavik, Iceland",
+    "image": "../data/imgs/Reykjavik.jpg",
+    "attractions": ["Blue Lagoon", "Golden Circle", "Northern Lights", "Hallgrimskirkja"],
+    "best_time_to_visit": ["September - April"],
+    "activities": ["Geothermal spas", "Glacier hiking", "Whale watching"],
+    "adventure": ["Ice caving", "Snowmobiling on glaciers"],
+    "cuisine": ["Icelandic lamb stew", "Skyr", "Plokkfiskur"]
+  },
+  {
+    "name": "Phuket, Thailand",
+    "image": "../data/imgs/Phuket.jpg",
+    "attractions": ["Phi Phi Islands", "Big Buddha", "Patong Beach", "Similan Islands"],
+    "best_time_to_visit": ["November - April"],
+    "activities": ["Snorkeling", "Night markets", "Buddhist temple visits"],
+    "adventure": ["Scuba diving", "ATV jungle tours"],
+    "cuisine": ["Pad Thai", "Mango Sticky Rice", "Tom Yum Soup"]
+  },
+  {
+    "name": "Barcelona, Spain",
+    "image": "../data/imgs/Barcelona.jpg",
+    "attractions": ["Sagrada Familia", "Park Güell", "La Rambla", "Gothic Quarter"],
+    "best_time_to_visit": ["April - June", "September - October"],
+    "activities": ["Tapas tours", "Street performances", "Beach relaxation"],
+    "adventure": ["Hot air ballooning over Catalonia", "Hiking Montserrat"],
+    "cuisine": ["Paella", "Churros", "Jamon Iberico", "Sangria"]
+  }
+]
