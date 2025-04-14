@@ -1,7 +1,6 @@
 {
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs21.1.0"
-    }
-  }
+  "version": 2,
+  "builds": [
+    { "src": "api/countries.js", "use": "@vercel/node" }
+  ]
 }
