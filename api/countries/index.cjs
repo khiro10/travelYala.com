@@ -49,22 +49,23 @@
 // app.listen(5000, () => console.log("✅ Server running on http://localhost:5000"));
 
 
-
 const axios = require('axios');
 
-module.exports = async function handler(req, res) {
-   res.setHeader('Access-Control-Allow-Origin', '*'); // ✅ allow all origins
+module.exports = async (req, res) => {
+  // ✅ Handle CORS
+  res.setHeader('Access-Control-Allow-Origin', '*'); // change * to your frontend URL for stricter security
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
-    return res.status(200).end(); // Respond to preflight
+    return res.status(200).end(); // CORS preflight success
   }
+
   try {
     const response = await axios.get('https://api.travelpayouts.com/data/en/countries.json');
     res.status(200).json(response.data);
-    console.log(req);  // You can remove this if not needed
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+  } catch (err) {
+    console.error('API error:', err.message);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 };
