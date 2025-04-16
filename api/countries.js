@@ -1,9 +1,9 @@
-const express = require("express");
-const axios = require("axios");
-const cors = require("cors");
+// const express = require("express");
+// const axios = require("axios");
+// const cors = require("cors");
 
-const app = express();
-app.use(cors());
+// const app = express();
+// app.use(cors());
 
 // app.get("/api/countries", async (req, res) => {
 //     // try {
@@ -22,16 +22,7 @@ app.use(cors());
 //         res.status(500).json({ error: err.message });
 //       }
 // });
-// app.get("/api/hotels", async (req, res) => {
-//     try {
-//         const { origin, destination, currency } = req.query;
-//         const response = await axios.get(`https://api.travelpayouts.com/data/en/hotels.json`);
-//         // const response = await axios.get(`/data/hotels.json`);
-//         res.json(response.data);
-//     } catch (error) {
-//         res.status(500).json({ error: error.message });
-//     }
-// });
+
 // const key = "5ae2e3f221c38a28845f05b6f1871bf887b3a0f13b1539aa3e220ca7";
 
 // app.get("/api/country/:id", async (req, res) => {
@@ -43,7 +34,8 @@ app.use(cors());
 //         res.status(500).json({ error: error.message });
 //     }
   
-// });app.get("/api/countryplaces/:lat/:lon", async (req, res) => {
+// });
+// app.get("/api/countryplaces/:lat/:lon", async (req, res) => {
 //      let radius = 30000; // 30 km radius 
 //     try {
 //         const { origin, destination, currency } = req.query;
