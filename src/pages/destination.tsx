@@ -19,7 +19,7 @@ export default function Destination() {
       useEffect(() => {
         const fetchCountries = async () => {
           try {
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/countries`);
+            const response = await axios.get(`https://travel-yala-jcgpgrbn5-khireddines-projects-980132fd.vercel.app/api/countries`);
             setCountries(response.data)
             console.log(response.data);
             setLoading(false)
