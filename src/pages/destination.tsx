@@ -2,7 +2,7 @@ import { Card, Col, Empty, Rate, Row } from 'antd'
 import React, { useEffect, useState } from 'react'
 import {  useNavigate } from 'react-router-dom';
 import PixabayImage from '../components/Pixabay';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default function Destination() {
 
