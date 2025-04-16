@@ -51,21 +51,21 @@
 
 const axios = require('axios');
 
-module.exports = async (req, res) => {
-  // ✅ Handle CORS
-  res.setHeader('Access-Control-Allow-Origin', '*'); // change * to your frontend URL for stricter security
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+module.exports = async function handler(req, res) {
+  // CORS HEADERS
+  res.setHeader('Access-Control-Allow-Origin', 'https://travel-yala-i9rbwcbnf-khireddines-projects-980132fd.vercel.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
+  // Handle preflight OPTIONS request
   if (req.method === 'OPTIONS') {
-    return res.status(200).end(); // CORS preflight success
+    return res.status(200).end();
   }
 
   try {
     const response = await axios.get('https://api.travelpayouts.com/data/en/countries.json');
     res.status(200).json(response.data);
-  } catch (err) {
-    console.error('API error:', err.message);
-    res.status(500).json({ error: 'Internal Server Error' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
