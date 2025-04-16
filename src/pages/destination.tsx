@@ -2,7 +2,7 @@ import { Card, Col, Empty, Rate, Row } from 'antd'
 import React, { useEffect, useState } from 'react'
 import {  useNavigate } from 'react-router-dom';
 import PixabayImage from '../components/Pixabay';
-// import axios from 'axios';
+import axios from 'axios';
 
 export default function Destination() {
 
@@ -19,13 +19,13 @@ export default function Destination() {
       useEffect(() => {
         const fetchCountries = async () => {
           try {
-          const response = await fetch('https://travel-yala-jcgpgrbn5-khireddines-projects-980132fd.vercel.app/api/countries', {
+          const response = await axios.get('https://travel-yala-jcgpgrbn5-khireddines-projects-980132fd.vercel.app/api/countries', {
   method: 'GET',
   headers: {
     'Accept': 'application/json',
   },
 });
-const data = await response.json();
+const data = await response.data;
             setCountries(data)
             console.log(data);
             setLoading(false)
