@@ -19,7 +19,7 @@ export default function Destination() {
       useEffect(() => {
         const fetchCountries = async () => {
           try {
-          const response = await axios.get('https://travel-yala-jcgpgrbn5-khireddines-projects-980132fd.vercel.app/api/countries', {
+          const response = await axios.get('https://travelyalla-backend-production.up.railway.app/api/countries', {
   method: 'GET',
   headers: {
     'Accept': 'application/json',
