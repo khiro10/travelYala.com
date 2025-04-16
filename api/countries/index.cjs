@@ -54,8 +54,8 @@ const axios = require('axios');
 module.exports = async function handler(req, res) {
   
 res.setHeader('Access-Control-Allow-Origin', 'https://travel-yala-kflrv92x7-khireddines-projects-980132fd.vercel.app');
-res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+res.setHeader('Access-Control-Allow-Methods', 'GET, PUT, DELETE,OPTIONS');
+res.setHeader('Access-Control-Allow-Headers', 'Content-Type ,X-auth-token ,Origin ,Authorization');
 
 if (req.method === 'OPTIONS') {
   return res.status(200).end();
