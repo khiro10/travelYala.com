@@ -53,6 +53,13 @@
 const axios = require('axios');
 
 module.exports = async function handler(req, res) {
+   res.setHeader('Access-Control-Allow-Origin', '*'); // ✅ allow all origins
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end(); // Respond to preflight
+  }
   try {
     const response = await axios.get('https://api.travelpayouts.com/data/en/countries.json');
     res.status(200).json(response.data);
