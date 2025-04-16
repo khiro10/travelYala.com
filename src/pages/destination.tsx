@@ -23,6 +23,7 @@ export default function Destination() {
             setCountries(response.data)
             console.log(response.data);
             setLoading(false)
+              alert("the pb is here")
           } catch (error) {
             console.error('Error:', error);
             setLoading(false)
