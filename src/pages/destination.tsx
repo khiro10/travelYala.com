@@ -20,8 +20,9 @@ export default function Destination() {
         const fetchCountries = async () => {
           try {
             const response = await fetch(`https://travel-yala-jcgpgrbn5-khireddines-projects-980132fd.vercel.app/api/countries`);
-            setCountries(response.data)
-            console.log(response.data);
+            const data = await response.json();
+            setCountries(data)
+            console.log(data);
             setLoading(false)
               alert("the pb is here")
           } catch (error) {
