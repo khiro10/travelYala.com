@@ -16,7 +16,7 @@ const Place: React.FC = () => {
 const [geo, setGeo] = useState<GeonameResponse>()    
 const navigate = useNavigate();
 const { id } = useParams<{ id: string }>();    
-const {data : geoData}  = useFetch(`http://localhost:5000/api/country/${id}`);
+const {data : geoData}  = useFetch(`https://travelyalla-backend-production.up.railway.app/api/country/${id}`);
 setGeo(geoData as any)
 // const t1 = "interesting_places";
 // const t2 = "architecture";
@@ -29,7 +29,7 @@ setGeo(geoData as any)
 // const [historical_places, sethistorical_places] = useState([])
 console.log(geoData);
 
-const {data}  = useFetch(`http://localhost:5000/api/countryplaces/${geo?.lat}/${geo?.lon}`);
+const {data}  = useFetch(`https://travelyalla-backend-production.up.railway.app/api/countryplaces/${geo?.lat}/${geo?.lon}`);
 // useEffect(() => {
 //   if(data){
 //     setInteresting_places((data as any).features?.filter((place: any) => place.properties?.kinds?.includes(t1)))
