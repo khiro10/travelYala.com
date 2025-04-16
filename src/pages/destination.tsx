@@ -19,16 +19,14 @@ export default function Destination() {
       useEffect(() => {
         const fetchCountries = async () => {
           try {
-            const response = await fetch(`https://travel-yala-jcgpgrbn5-khireddines-projects-980132fd.vercel.app/api/countries`,
-                                         {
-  method: 'GET',
-  headers: {
-    'Accept': 'text/html',
-    'Cookie': 'Version=1', // Note: Cookies often won’t be sent this way unless same-origin
-  },
-  credentials: 'include', // If you want cookies to be sent automatically
-});
-            const data = await response.json();
+           const response = await axios.get('https://your-api-url/api/countries', {
+              headers: {
+                'Accept': 'text/html',
+                // 'Cookie': 'Version=1'  ← This won't work in browser either
+              },
+              withCredentials: true, // Automatically send cookies
+            });
+            const data = await response.data;
             setCountries(data)
             console.log(data);
             setLoading(false)
