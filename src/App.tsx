@@ -27,11 +27,28 @@ const App: React.FC = () => {
         return <Home />;
     }
   };
+  useEffect(() => {
+        const fetchCountries = async () => {
+          try {
+            const response = await axios.get(`https://travel-yala-jcgpgrbn5-khireddines-projects-980132fd.vercel.app/api/countries`);
+            setCountries(response.data)
+            console.log(response.data);
+            setLoading(false)
+              alert("the pb is here")
+          } catch (error) {
+            console.error('Error:', error);
+            setLoading(false)
+          }
+        };
+      
+        fetchCountries();
+        
  return (<div>
-       <Navbar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
+{/*        <Navbar selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
        <Content style={{ padding: "20px", textAlign: "center" }}>
             {renderContent()}
-        </Content>
+        </Content> */}
+   {countries && <p> it here <p/>}
  </div>)
 };
 
