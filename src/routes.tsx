@@ -1,6 +1,7 @@
 
 import { Route, Routes } from 'react-router-dom'
 import Place from './pages/place'
+import City from './pages/city'
 import App from './App'
 
 export default function MainRouter() {
