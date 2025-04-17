@@ -9,7 +9,8 @@ export default function MainRouter() {
     
         <Routes>
             <Route path="/" element={<App />} />
-            <Route path="/link/:id" element={<Place />}/>
+            <Route path="/country/:id" element={<Place />}/>
+            <Route path="/city/:id" element={<City />}/> 
         </Routes>
     
   )
