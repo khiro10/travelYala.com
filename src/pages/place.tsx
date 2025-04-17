@@ -5,6 +5,8 @@ import { useFetch } from '../components/fecthData';
 import { useNavigate, useParams } from 'react-router-dom';
 import { CloseOutlined } from "@ant-design/icons";
 import PixabayImage from '../components/Pixabay';
+import axios from 'axios';
+
 
 interface GeonameResponse {
   lat: number;
@@ -13,7 +15,8 @@ interface GeonameResponse {
   country: string;
 }
 const Place: React.FC = () => {
-          
+
+const [loading, setLoading] = React.useState<boolean>(true);          
 const [geo, setGeo] = useState<GeonameResponse>()    
 const navigate = useNavigate();
 const { id } = useParams<{ id: string }>();         
@@ -27,18 +30,17 @@ useEffect(() => {
     'Accept': 'application/json',
   },
 });
-const data = await response.data;
-setGeo(data)            
+const data = await response.data;       
   } catch (error) {
             console.error("Error fetching countries:", error);setLoading(false);
           }
         };
     
-        fetchCountries();     
-  if (geoData) {
-    setGeo(geoData as GeonameResponse);
+        fetchCountry();     
+  if (data) {
+    setGeo(data as GeonameResponse);
   }
-}, [geoData]);
+}, [data]);
 
 useEffect(() => {
 
