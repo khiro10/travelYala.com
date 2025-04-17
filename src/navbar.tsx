@@ -16,10 +16,10 @@ import { Menu, MenuProps } from 'antd';
             label: (
               <SearchBar/>
             ),
+              disabled: true
           },
           { label: 'Home', key: '2' },
           {label: 'Destinations', key: '3' },
-          {label: 'Hotels', key: '4' },
           {label: 'Contact', key: '5' },
           
         ];
