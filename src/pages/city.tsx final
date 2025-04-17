@@ -3,7 +3,7 @@ import { Content } from 'antd/es/layout/layout';
 import React from 'react'
 import {  useNavigate, useParams } from 'react-router-dom';
 import { CloseOutlined } from "@ant-design/icons";
-import "./city.css"
+
 import PixabayImage from '../components/Pixabay';
 
 const City: React.FC = () => {
