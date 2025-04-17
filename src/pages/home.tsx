@@ -19,7 +19,7 @@ export default function Home() {
     // Flight script
     if (!document.getElementById("flight-script")) {
       const flightScript = document.createElement("script");
-      flightScript.src=`https://tp.media/content?currency=usd&trs=390781&shmarker=607907&show_hotels=true&powered_by=false&locale=en&searchUrl=www.aviasales.com%2Fsearch&primary_override=%2332a8dd&color_button=%23FF2626ff&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&no_labels=true&plain=false&promo_id=7879&campaign_id=100`
+      flightScript.src=`https://tp.media/content?currency=usd&trs=390781&shmarker=607907&show_hotels=false&powered_by=false&locale=en&searchUrl=www.aviasales.com%2Fsearch&primary_override=%2332a8dd&color_button=%23FF2626ff&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&no_labels=true&plain=false&promo_id=7879&campaign_id=100`
   
       flightScript.async = true;
       flightScript.charset = "utf-8";
