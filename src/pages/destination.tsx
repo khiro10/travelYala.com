@@ -87,7 +87,7 @@ const data = await response.data;
             
             {Countries && Countries.map((place:any, index) => (
               <div key={index}>
-              <Col xs={24} sm={12} md={8} onClick={()=> navigate(`/link/${place.name}`)} >
+              <Col xs={24} sm={12} md={8} onClick={()=> navigate(`/country/${place.name}`)} >
                 <Card 
                     hoverable
                     style={{ width: 240,height: 360 , cursor: 'pointer',alignItems: 'center', justifyContent: 'center' }}
