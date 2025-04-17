@@ -1,61 +1,52 @@
-import { AutoComplete, AutoCompleteProps, Input } from 'antd'
-import { useState } from 'react'
+import { AutoComplete, AutoCompleteProps, Input } from 'antd';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function SearchBar() {
-    const getRandomInt = (max: number, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const navigate = useNavigate();
+  const [options, setOptions] = useState<AutoCompleteProps['options']>([]);
 
-const searchResult = (query: string) =>
-  new Array(getRandomInt(5))
-    .join('.')
-    .split('.')
-    .map((_, idx) => {
-      const category = `${query}${idx}`;
-      return {
-        value: category,
+  const handleSearch = async (value: string) => {
+    if (!value) {
+      setOptions([]);
+      return;
+    }
+  
+    try {
+      const response = await fetch(`http://localhost:5000/api/countries?search=${value}`);
+      const data = await response.json();
+  
+      const formattedOptions = data.map((item: string) => ({
+        value: item,
         label: (
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-            }}
-          >
-            <span>
-              Found {query} on{' '}
-              <a
-                href={`https://s.taobao.com/search?q=${query}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {category}
-              </a>
-            </span>
-            <span>{getRandomInt(200, 100)} results</span>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <span>{item}</span>
           </div>
-        ),
-      };
-    });
-
-
-    const [options, setOptions] = useState<AutoCompleteProps['options']>([]);
-
-    const handleSearch = (value: string) => {
-      setOptions(value ? searchResult(value) : []);
-    };
+        )
+      }));
   
-    const onSelect = (value: string) => {
-      console.log('onSelect', value);
-    };
-  
+      setOptions(formattedOptions);
+    } catch (err) {
+      console.error("Search error:", err);
+    }
+  };
+
+  const onSelect = (value: string) => {
+    navigate(`/country/${value}`)
+  };
+
   return (
-    <AutoComplete className='searchBtn'
-            popupMatchSelectWidth={252}
-            style={{ width: 300}}
-            options={options}
-            onSelect={onSelect}
-            onSearch={handleSearch}
-            size="large"
-            >
-            <Input.Search size="large" placeholder="let go..." enterButton />
-        </AutoComplete>
-  )
+    <AutoComplete
+      className='searchBtn'
+      popupMatchSelectWidth={300}
+      style={{ width: 300 }}
+      options={options}
+      onSelect={onSelect}
+      onSearch={handleSearch}
+      size="large"
+    >
+      <Input.Search size="large" placeholder="Search country..." enterButton />
+    </AutoComplete>
+  );
 }
