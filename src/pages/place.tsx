@@ -5,8 +5,7 @@ import { useFetch } from '../components/fecthData';
 import { useNavigate, useParams } from 'react-router-dom';
 import { CloseOutlined } from "@ant-design/icons";
 import PixabayImage from '../components/Pixabay';
-import axios from 'axios';
-
+// import axios from 'axios'
 
 interface GeonameResponse {
   lat: number;
@@ -15,32 +14,15 @@ interface GeonameResponse {
   country: string;
 }
 const Place: React.FC = () => {
-
-const [loading, setLoading] = React.useState<boolean>(true);          
 const [geo, setGeo] = useState<GeonameResponse>()    
 const navigate = useNavigate();
-const { id } = useParams<{ id: string }>();         
-// const {data : geoData}  = useFetch(`http://localhost:5000/api/country/${id}`);
+const { id } = useParams<{ id: string }>();    
+const {data : geoData}  = useFetch(`https://travelyalla-backend-production.up.railway.app/api/country/${id}`);
 useEffect(() => {
-  const fetchCountry = async () => {
-          try {
-          const response = await axios.get(`https://travelyalla-backend-production.up.railway.app/api/country/${id} `, {
-  method: 'GET',
-  headers: {
-    'Accept': 'application/json',
-  },
-});
-const data = await response.data;       
-  } catch (error) {
-            console.error("Error fetching countries:", error);setLoading(false);
-          }
-        };
-        console.log(loading)
-        fetchCountry();     
-  
-    setGeo(data);
-  
-}, []);
+  if (geoData) {
+    setGeo(geoData as GeonameResponse);
+  }
+}, [geoData]);
 
 useEffect(() => {
 
@@ -57,27 +39,9 @@ useEffect(() => {
   
 }, []);
 
-// const t1 = "interesting_places";
-// const t2 = "architecture";
-// const t3 = "museums";
-// const t4 = "historical_places";
-// const [data, setData] = useState()
-// const [interesting_places, setInteresting_places] = useState([])
-// const [architecture, setArchitecture] = useState([])
-// const [museums, setMuseums] = useState([])
-// const [historical_places, sethistorical_places] = useState([])
 console.log(geo);
 
-const {data}  = useFetch(`http://localhost:5000/api/countryplaces/${geo?.lat}/${geo?.lon}`);
-// useEffect(() => {
-//   if(data){
-//     setInteresting_places((data as any).features?.filter((place: any) => place.properties?.kinds?.includes(t1)))
-//     setArchitecture((data as any).features?.filter((place: any) => place.properties?.kinds?.includes(t2)))
-//     setMuseums((data as any).features?.filter((place: any) => place.properties?.kinds?.includes(t3)))
-//     sethistorical_places((data as any).features?.filter((place: any) => place.properties?.kinds?.includes(t4)))
-// }
-// }, [data]);
-
+const {data}  = useFetch(`https://travelyalla-backend-production.up.railway.app/api/countryplaces/${geo?.lat}/${geo?.lon}`);
 
 if (!id) return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />;
 return (
@@ -90,7 +54,6 @@ return (
     <Content style={{ maxWidth: "800px", margin: "auto", textAlign: "center" }}>
       <Typography.Title>{id}</Typography.Title>
       <br />
-      {/* <div min-width={300} style={{ width:"100%",height:400, objectFit: "cover", borderRadius: 10 }}><PixabayImage query={id}/></div> */}
       <p style={{textAlign :"left"}}></p>
       <Typography.Title level={3}>Flights</Typography.Title>
             <Row gutter={[16, 16]} id="flight-widget" style={{width:"100%"}}>
@@ -117,87 +80,7 @@ return (
               </div>
             ))}
         </Row>
-        <br />
-        {/* {architecture && <>
-        <Typography.Title level={3}>architecture</Typography.Title>
-        <Row gutter={[16, 16]} className="list">     
-        {architecture
-        .map((place: any, index: number) => (
-                <div key={index}>
-                {place.properties.name && 
-                <Col xs={24} sm={12} md={8} onClick={()=> navigate(`/link/${place.name}`)} >
-                  <Card 
-                      hoverable
-                      style={{ width: 240,height: 360 , cursor: 'pointer',alignItems: 'center', justifyContent: 'center' }}
-                      // cover={<PixabayImage query={place?.properties?.name}/>}
-                  >
-                      <Card.Meta title={place?.properties?.name} />
-                      <br />
-                      <Rate disabled defaultValue={2} />
-                  </Card>
-                </Col>}
-                </div>
-              ))}
-        </Row>
-        </>}
-        {museums && <>
-        <Typography.Title level={3}>museums</Typography.Title>
-        <Row gutter={[16, 16]} className="list">     
-        {museums
-        .map((place: any, index: number) => (
-                <div key={index}>
-                {place.properties.name && 
-                <Col xs={24} sm={12} md={8} onClick={()=> navigate(`/link/${place.name}`)} >
-                  <Card 
-                      hoverable
-                      style={{ width: 240,height: 360 , cursor: 'pointer',alignItems: 'center', justifyContent: 'center' }}
-                      // cover={<PixabayImage query={place?.properties?.name}/>}
-                  >
-                      <Card.Meta title={place?.properties?.name} />
-                      <br />
-                      <Rate disabled defaultValue={2} />
-                  </Card>
-                </Col>}
-                </div>
-              ))}
-        </Row>
-        </>}
-        
-      
-        {historical_places && (<><Typography.Title level={3}>Historical_places</Typography.Title>
-      <Row gutter={[16, 16]} className="list">
-            
-      {historical_places
-      .map((place: any, index: number) => (
-          
-          <div key={index}>
-              {place.properties.name && 
-              <Col xs={24} sm={12} md={8}  onClick={()=> navigate(`/link/${place.name}`)} >
-                <Card 
-                    hoverable
-                    style={{ width: 240,height: 360 , cursor: 'pointer',alignItems: 'center', justifyContent: 'center' }}
-                    // cover={<PixabayImage query={place?.properties?.name}/>}
-                >
-                    <Card.Meta title={place?.properties?.name} />
-                    <br />
-                    <Rate disabled defaultValue={2} />
-                </Card>
-              </Col>}
-              </div>
-            ))}
-        </Row></>)}
- */}
-      {/* <Typography.Title level={3}>Top Attractions</Typography.Title>
-      <List
-        bordered
-        dataSource={[] as String[]}
-        renderItem={(item) => <List.Item>{item}</List.Item>}
-      /> */}
-
-      {/* <div  >
-      <Typography.Title>rate the place</Typography.Title><Rate defaultValue={2} />
-      </div> */}
-    
+        <br />    
     </Content>
   </Layout>
   );
