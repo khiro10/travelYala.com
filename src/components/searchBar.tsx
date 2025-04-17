@@ -55,7 +55,7 @@ const searchResult = (query: string) =>
             onSearch={handleSearch}
             size="large"
             >
-            <Input.Search size="large" placeholder="input here" enterButton />
+            <Input.Search size="large" placeholder="let go..." enterButton />
         </AutoComplete>
   )
 }
