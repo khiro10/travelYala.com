@@ -60,7 +60,7 @@ return (
       .map((place: any, index: number) => (
               <div key={index}>
               {place.properties.name && 
-              <Col xs={24} sm={12} md={8} onClick={()=> navigate(``)} >
+              <Col xs={24} sm={12} md={8} onClick={()=> navigate(`/city/${place?.properties?.name}`)} >
                 <Card 
                     hoverable
                     style={{ width: 240,height: 360 , cursor: 'pointer',alignItems: 'center', justifyContent: 'center' }}
