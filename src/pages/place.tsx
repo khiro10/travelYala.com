@@ -35,12 +35,12 @@ const data = await response.data;
             console.error("Error fetching countries:", error);setLoading(false);
           }
         };
-    
+        console.log(loading)
         fetchCountry();     
-  if (data) {
-    setGeo(data as GeonameResponse);
-  }
-}, [data]);
+  
+    setGeo(data);
+  
+}, []);
 
 useEffect(() => {
 
