@@ -5,7 +5,7 @@ const Contact = () => {
   const [form] = Form.useForm();
 
   const handleSubmit = async (values: { email: string; subject: string; message: string }) => {
-    await fetch("travelyalla-backend-production.up.railway.app/send-email", {
+    await fetch("https://travelyalla-backend-production.up.railway.app/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
