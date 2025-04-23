@@ -29,7 +29,7 @@ const data = await response.data;
             setCountries(data)
             console.log(data);
             setLoading(false)
-              alert("the pb is here")
+            
           } catch (error) {
             console.error('Error:', error);
             setLoading(false)
