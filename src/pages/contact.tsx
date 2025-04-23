@@ -1,32 +1,21 @@
 import { Button, Card, Form, Input,  } from "antd";
 import { MailOutlined, UserOutlined, } from "@ant-design/icons";
-import { FormEvent } from "react";
+
 const Contact = () => {
   const [form] = Form.useForm();
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const form = e.currentTarget;
-    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-    const subject = (form.elements.namedItem("subject") as HTMLInputElement).value;
-    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
-
-    const res = await fetch("travelyalla-backend-production.up.railway.app/send-email", {
+  const handleSubmit = async (values: { email: string; subject: string; message: string }) => {
+    await fetch("travelyalla-backend-production.up.railway.app/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         to: "khireddine.benchikh@gmail.com",
-        subject,
-        text: `From: ${email}\n\n${message}`,
+        subject: values.subject,
+        text: `From: ${values.email}\n\n${values.message}`,
       }),
     });
-
-    const data = await res.json();
-    alert(data.message);
-    console.log("Form submitted:", { email, subject, message });
-
-    form.reset(); // optional: clear form after submit
+  
+    alert("Message sent!");
   };
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh", background: "#f5f5f5" }}>
