@@ -12,11 +12,11 @@ const Contact = () => {
     const subject = (form.elements.namedItem("subject") as HTMLInputElement).value;
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
 
-    const res = await fetch("https://your-railway-app-url/send-email", {
+    const res = await fetch("travelyalla-backend-production.up.railway.app/send-email", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        to: "yourgmail@gmail.com",
+        to: "khireddine.benchikh@gmail.com",
         subject,
         text: `From: ${email}\n\n${message}`,
       }),
