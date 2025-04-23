@@ -11,7 +11,7 @@ const Contact = () => {
       body: JSON.stringify({
         to: "khireddine.benchikh@gmail.com",
         subject: values.subject,
-        text: `From: ${"www.sidkhir@gmail/com"}\n\n${"values.message"}`,
+        text: `From: ${values.email}\n\n${values.message}`,
       }),
     });
   
