@@ -14,7 +14,9 @@ const Contact = () => {
         text: `From: ${values.email}\n\n${values.message}`,
       }),
     });
-  
+    values.email = '';
+    values.subject = '';
+    values.message = '';
     alert("Message sent!");
   };
   return (
