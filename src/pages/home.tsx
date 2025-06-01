@@ -1,16 +1,11 @@
-import { Modal, Row, Typography } from "antd";
+import { Row, Typography } from "antd";
 import { useEffect } from "react";
 
 
 
 
 export default function Home() {
-  useEffect(() => {
-    Modal.info({
-      title: "🚨 We're selling this project!",
-      content: "Interested? Contact us",
-    });
-  }, []);
+  
   useEffect(() => {
     // Inject Hotel script
     if (!document.getElementById("hotel-script")) {
@@ -34,6 +29,7 @@ export default function Home() {
     }
     
   }, []);
+  
   return (
     < >
      <Typography.Title style={{textAlign:"left",color:'#e52e71'}} level={2}>Search Hotel</Typography.Title>

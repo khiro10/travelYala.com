@@ -19,8 +19,8 @@ import { Menu, MenuProps } from 'antd';
               disabled: true
           },
           { label: 'Home', key: '2' },
-          {label: 'Destinatioojns', key: '3' },
-          {label: 'Contact', key: '5' },
+          {label: 'Destinations', key: '3' },
+          {label: 'Contact us', key: '5' },
           
         ];
   return (
